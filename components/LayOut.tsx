@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "@/components/Logo";
 import SearchComp from "./SearchComp";
-
+import "@/app/globals.css";
 export default function LayOut({
   children,
   clsx,

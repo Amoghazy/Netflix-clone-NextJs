@@ -25,7 +25,10 @@ export default function Index() {
   };
 
   return (
-    <LayOut clsx="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c7f07b68-7989-4ff7-a31e-11c17dcc2fea/8b02bc99-bf25-4b2e-ac77-0a5e07a0abd3/EG-en-20240422-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+    <LayOut
+      showSearch={false}
+      clsx="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c7f07b68-7989-4ff7-a31e-11c17dcc2fea/8b02bc99-bf25-4b2e-ac77-0a5e07a0abd3/EG-en-20240422-popsignuptwoweeks-perspective_alpha_website_large.jpg')]"
+    >
       <div className="bg-black bg-opacity-65 max-w-[450px] mx-auto p-16 ">
         <h1 className="text-3xl mb-6 font-bold">Sign In</h1>
         <div className="mb-6">

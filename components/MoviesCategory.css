@@ -1,0 +1,15 @@
+.react-multiple-carousel__arrow {
+  height: -webkit-fill-available !important;
+  border-radius: 0% !important;
+  top: -35% !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+.react-multiple-carousel__arrow--right {
+  right: 0 !important;
+}
+.react-multiple-carousel__arrow--left {
+  left: 0 !important;
+}
+.react-multiple-carousel__arrow:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+}

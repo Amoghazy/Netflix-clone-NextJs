@@ -11,7 +11,7 @@ export default function MovieTile({ movie }: { movie: IMovie }) {
 
   return (
     <div
-      className="hover:scale-110 "
+      className="hover:scale-110 w-36 h-72 "
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >

@@ -4,8 +4,18 @@ import Image from "next/image";
 import "@/app/globals.css";
 import LayOut from "@/components/LayOut";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import UnAuthorized from "@/components/UnAuthorized";
 export default function Page({ movieData }: { movieData: IMovie }) {
   const router = useRouter();
+  const { data: session, status } = useSession();
+  if (status !== "authenticated") {
+    return (
+      <LayOut showSearch={false}>
+        <UnAuthorized />
+      </LayOut>
+    );
+  }
   return (
     <LayOut
       showSearch={false}

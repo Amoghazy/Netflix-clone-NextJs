@@ -14,13 +14,13 @@ export default NextAuth({
         // email: {    label: "Email",   type: "text" ,  placeholder: "Email" }, // يظهر ف صفحة تسجيل النكست auth
         email: {},
         password: {},
-        callbackUrl: {},
       },
       authorize: async (credentials) => {
         // console.log(credentials.callbackUrl);
 
-        DB.connect();
+        await DB.connect();
         let user = await User.findOne({ email: credentials?.email });
+        console.log(user, "user");
         if (credentials?.callbackUrl! === "/dashboard" && user) {
           const match = await bcrypt.compare(
             credentials?.password!,
@@ -30,12 +30,17 @@ export default NextAuth({
           else return user;
         }
         if (!user && credentials?.callbackUrl! != "/dashboard") {
+          console.log(credentials);
           const hashPassword = await bcrypt.hash(credentials?.password!, 10);
+          console.log(hashPassword);
           const newUser = new User({
             email: credentials?.email,
             password: hashPassword,
+            provider: "userInfo",
           });
+          console.log(newUser);
           await newUser.save();
+          console.log(newUser, " new user save");
           return newUser;
         }
         return null;
